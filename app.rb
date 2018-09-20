@@ -1,4 +1,3 @@
-#encoding: utf-8
 require 'rubygems'
 require 'sinatra'
 require 'sinatra/reloader'
@@ -27,7 +26,6 @@ post '/visit' do
   @barber = params[:barber]
 
   erb "See you soon!"
-
 end
 
 get '/hey' do
