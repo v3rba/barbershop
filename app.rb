@@ -2,9 +2,10 @@
 require 'rubygems'
 require 'sinatra'
 require 'sinatra/reloader'
+require 'yaml/store'
 
 get '/' do
-	erb "Hello! <a href=\"https://github.com/bootstrap-ruby/sinatra-bootstrap\">Original</a> pattern has been modified for <a href=\"http://rubyschool.us/\">Ruby School</a>"			
+	erb "Hello! <a href=\"https://github.com/bootstrap-ruby/sinatra-bootstrap\">Original</a> pattern has been modified by <a href=\"https://github.com/v3rba\">Verba</a>"
 end
 
 get '/about' do
@@ -22,9 +23,14 @@ end
 post '/visit' do
   @username = params[:username]
   @phone = params[:phone]
-  @date = params[:datetime]
+  @datetime = params[:datetime]
   @barber = params[:barber]
 
-  erb "OK, username #{@username}, #{@phone}"
+  erb "See you soon!"
 
+end
+
+get '/hey' do
+  @message = "Under cunstruction"
+  erb :hey
 end
