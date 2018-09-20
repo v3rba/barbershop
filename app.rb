@@ -27,8 +27,3 @@ post '/visit' do
 
   erb "See you soon!"
 end
-
-get '/hey' do
-  @message = "Under cunstruction"
-  erb :hey
-end
