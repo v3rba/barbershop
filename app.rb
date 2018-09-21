@@ -24,6 +24,7 @@ post '/visit' do
   @phone = params[:phone]
   @datetime = params[:datetime]
   @barber = params[:barber]
+  @color = params[:color]
 
   erb "See you soon!"
 end
