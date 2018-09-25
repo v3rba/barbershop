@@ -29,6 +29,7 @@ post '/visit' do
   hh = { :username => 'Enter name', 
          :phone => 'Enter phone', 
          :datetime => 'Enter date and time' }
+
   # for each pair key-value
   hh.each do |key, value|
 
@@ -37,7 +38,7 @@ post '/visit' do
       return erb :visit
     end
   end
-  
+
   erb "See you soon!"
 
 end
