@@ -30,15 +30,13 @@ post '/visit' do
          :phone => 'Enter phone', 
          :datetime => 'Enter date and time' }
 
-  # for each pair key-value
-  hh.each do |key, value|
+  @error = hh.select {|key,_| params[key] == ""}.values.join(", ")
 
-    if params[key] == ''
-      @error = hh[key]
-      return erb :visit
-    end
+  if @error != ''
+    return erb :visit
   end
 
-  erb "See you soon!"
+
+  erb "Ok, See you soon!"
 
 end
