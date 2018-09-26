@@ -36,7 +36,23 @@ post '/visit' do
     return erb :visit
   end
 
-
   erb "Ok, See you soon!"
+
+end
+
+post '/contacts' do
+  @email = params[:email]
+  @text = params[:text]
+
+  hs = { :email => 'Enter email', 
+         :phone => 'Leave your message' }
+
+  @error = hs.select {|key,_| params[key] == ""}.values.join(", ")
+
+  if @error != ''
+    return erb :contacts
+  end
+
+  erb "Thank you"
 
 end
