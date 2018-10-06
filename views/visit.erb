@@ -21,9 +21,9 @@
   <div class="form-group">
     <label>Choose your barber: </label>
     <select name="barber" class="form-control">
-      <option>Tommy</option>
-      <option>Gus</option>
-      <option>Walter</option>
+      <option <%= @barber == 'Tommy' ? 'selected' : '' %>>Tommy</option>
+      <option <%= @barber == 'Gus' ? 'selected' : '' %>>Gus</option>
+      <option <%= @barber == 'Walter' ? 'selected' : '' %>>Walter</option>
     </select>
   </div>
 
