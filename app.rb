@@ -1,7 +1,6 @@
 require 'rubygems'
 require 'sinatra'
 require 'sinatra/reloader'
-require 'yaml/store'
 require 'sqlite3'
 
 def is_barber_exists? db, name
@@ -49,7 +48,7 @@ configure do
       "name" TEXT
     )'
 
-  seed_db db, ['Jessie Pinkman', 'Walter White', 'Gus Fring', 'Mike Ehrmantraut']
+  seed_db db, ['Tommy', 'Gus', 'Walter']
 end
 
 get '/' do
@@ -123,6 +122,8 @@ post '/contacts' do
 end
 
 get '/showusers' do
-  erb "Hello World"
-end
+  db = get_db
 
+  @results = db.execute 'select * from Users order by id desc'
+  erb :showusers
+end
