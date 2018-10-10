@@ -100,27 +100,6 @@ post '/visit' do
 
 end
 
-def get_db
-  return SQLite3::Database.new 'barbershop.db'
-end
-
-post '/contacts' do
-  @email = params[:email]
-  @text = params[:text]
-
-  hs = { :email => 'Enter email', 
-         :phone => 'Leave your message' }
-
-  @error = hs.select {|key,_| params[key] == ""}.values.join(", ")
-
-  if @error != ''
-    return erb :contacts
-  end
-
-  erb "Thank you"
-
-end
-
 get '/showusers' do
   db = get_db
 
