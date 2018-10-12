@@ -97,7 +97,7 @@ post '/visit' do
     )
     values (?, ?, ?, ?, ?)', [@username, @phone, @datetime, @barber, @color]
 
-  erb "Ok, See you soon!"
+  erb "<h2>Ok, See you soon!</h2>"
 
 end
 
