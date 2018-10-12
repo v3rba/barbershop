@@ -1,6 +1,18 @@
 <h2>Sing up now!</h2>
 <p>Book an appointment</p>
 
+
+<script type="text/javascript">
+
+$(function(){
+
+  $('#color').simplecolorpicker();
+  $('#datetimepicker').datetimepicker();
+
+});
+
+</script>
+
 <form action="/visit" method="POST" role="form">
 
   <div class="form-group">
@@ -22,9 +34,12 @@
   <div class="form-group">
     <label>Choose your barber: </label>
     <select name="barber" class="form-control">
-      <option <%= @barber == 'Tommy' ? 'selected' : '' %>>Tommy</option>
-      <option <%= @barber == 'Gus' ? 'selected' : '' %>>Gus</option>
-      <option <%= @barber == 'Walter' ? 'selected' : '' %>>Walter</option>
+
+      <% @barbers.each do |item| %>
+        <option <%= @barber == item['name'] ? 'selected' : '' %>><%= item['name'] %></option>
+      <% end %>
+
+
     </select>
   </div>
 
@@ -49,14 +64,3 @@
   <button type="submit" class="btn btn-primary">Book an  appoitment</button>
 
 </form>
-
-<script type="text/javascript">
-
-$(function(){
-
-  $('#color').simplecolorpicker();
-  $('#datetimepicker').datetimepicker();
-
-});
-
-</script>

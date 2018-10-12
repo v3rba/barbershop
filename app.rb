@@ -48,7 +48,7 @@ configure do
       "name" TEXT
     )'
 
-  seed_db db, ['Tommy', 'Gus', 'Walter']
+  seed_db db, ['Jessie Pinkman', 'Walter White', 'Gus Fring', 'Mike Ehrmantraut']
 end
 
 get '/' do
@@ -68,6 +68,7 @@ get '/visit' do
 end
 
 post '/visit' do
+
   @username = params[:username]
   @phone = params[:phone]
   @datetime = params[:datetime]
