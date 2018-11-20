@@ -70,10 +70,10 @@ end
 post '/visit' do
 
   @username = params[:username]
-  @phone = params[:phone]
+  @phone    = params[:phone]
   @datetime = params[:datetime]
-  @barber = params[:barber]
-  @color = params[:color]
+  @barber   = params[:barber]
+  @color    = params[:color]
 
   hh = { :username => 'Enter name',
          :phone => 'Enter phone',
