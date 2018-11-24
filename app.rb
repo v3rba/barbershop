@@ -76,7 +76,7 @@ post '/visit' do
   @color    = params[:color]
 
   hh = { :username => 'Enter name',
-         :phone => 'Enter phone',
+         :phone =>    'Enter phone',
          :datetime => 'Enter date and time' }
 
   @error = hh.select {|key,_| params[key] == ""}.values.join(", ")
